@@ -160,3 +160,4 @@ C:\Users\Dell\OneDrive\Desktop\Webapi\webapi\obj\Debug\net8.0\refint\Webapi.dll
 C:\Users\Dell\OneDrive\Desktop\Webapi\webapi\obj\Debug\net8.0\Webapi.pdb
 C:\Users\Dell\OneDrive\Desktop\Webapi\webapi\obj\Debug\net8.0\Webapi.genruntimeconfig.cache
 C:\Users\Dell\OneDrive\Desktop\Webapi\webapi\obj\Debug\net8.0\ref\Webapi.dll
+C:\Users\Dell\OneDrive\Desktop\Webapi\Webapi\obj\Debug\net8.0\Webapi.sourcelink.json
