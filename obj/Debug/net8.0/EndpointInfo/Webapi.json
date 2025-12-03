@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/AppointmentsControllers": {
+    "/api/Appointments": {
       "get": {
         "tags": [
-          "AppointmentsControllers"
+          "Appointments"
         ],
         "responses": {
           "200": {
@@ -44,7 +44,7 @@
       },
       "post": {
         "tags": [
-          "AppointmentsControllers"
+          "Appointments"
         ],
         "requestBody": {
           "content": {
@@ -89,10 +89,10 @@
         }
       }
     },
-    "/api/AppointmentsControllers/{id}": {
+    "/api/Appointments/{id}": {
       "get": {
         "tags": [
-          "AppointmentsControllers"
+          "Appointments"
         ],
         "parameters": [
           {
@@ -130,7 +130,7 @@
       },
       "put": {
         "tags": [
-          "AppointmentsControllers"
+          "Appointments"
         ],
         "parameters": [
           {
@@ -164,30 +164,13 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Appointment"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Appointment"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Appointment"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       },
       "delete": {
         "tags": [
-          "AppointmentsControllers"
+          "Appointments"
         ],
         "parameters": [
           {
@@ -202,24 +185,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Appointment"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Appointment"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Appointment"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }

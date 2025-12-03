@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "Webapi.Controllers.AppointmentsControllers",
+    "ContainingType": "Webapi.Controllers.AppointmentsController",
     "Method": "GetAppointments",
-    "RelativePath": "api/AppointmentsControllers",
+    "RelativePath": "api/Appointments",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -20,9 +20,9 @@
     ]
   },
   {
-    "ContainingType": "Webapi.Controllers.AppointmentsControllers",
+    "ContainingType": "Webapi.Controllers.AppointmentsController",
     "Method": "CreateAppointment",
-    "RelativePath": "api/AppointmentsControllers",
+    "RelativePath": "api/Appointments",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -46,9 +46,9 @@
     ]
   },
   {
-    "ContainingType": "Webapi.Controllers.AppointmentsControllers",
-    "Method": "GetAppointments",
-    "RelativePath": "api/AppointmentsControllers/{id}",
+    "ContainingType": "Webapi.Controllers.AppointmentsController",
+    "Method": "GetAppointment",
+    "RelativePath": "api/Appointments/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -72,9 +72,9 @@
     ]
   },
   {
-    "ContainingType": "Webapi.Controllers.AppointmentsControllers",
+    "ContainingType": "Webapi.Controllers.AppointmentsController",
     "Method": "UpdateAppointment",
-    "RelativePath": "api/AppointmentsControllers/{id}",
+    "RelativePath": "api/Appointments/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -90,22 +90,12 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Webapi.Models.Appointment",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "Webapi.Controllers.AppointmentsControllers",
+    "ContainingType": "Webapi.Controllers.AppointmentsController",
     "Method": "DeleteAppointment",
-    "RelativePath": "api/AppointmentsControllers/{id}",
+    "RelativePath": "api/Appointments/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -116,17 +106,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Webapi.Models.Appointment",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Webapi.Controllers.WeatherForecastController",

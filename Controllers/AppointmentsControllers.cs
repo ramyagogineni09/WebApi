@@ -1,5 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Webapi.Data;
 using Webapi.Models;
@@ -8,63 +7,70 @@ namespace Webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AppointmentsControllers : ControllerBase
+    public class AppointmentsController : ControllerBase   // FIXED NAME
     {
-        private readonly DataContext dbcontext;
+        private readonly DataContext _context;
 
-        public AppointmentsControllers(DataContext dbcontext)
+        public AppointmentsController(DataContext context)
         {
-            this.dbcontext = dbcontext;
+            _context = context;
         }
+
+        // GET: api/appointments
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointments() { 
-
-            return await dbcontext.Appointments.ToListAsync();
-        
-        
+        public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointments()
+        {
+            return await _context.Appointments.ToListAsync();
         }
+
+        // GET: api/appointments/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Appointment>> GetAppointments(int id) {
+        public async Task<ActionResult<Appointment>> GetAppointment(int id)
+        {
+            var appointment = await _context.Appointments.FindAsync(id);
 
-            var appointments = await dbcontext.Appointments.FindAsync(id);
-            if (appointments == null)
-            {
+            if (appointment == null)
                 return NotFound();
-            }
-            return Ok(appointments);
+
+            return appointment;
         }
+
+        // POST: api/appointments
         [HttpPost]
         public async Task<ActionResult<Appointment>> CreateAppointment(Appointment appointment)
         {
-            dbcontext.Appointments.Add(appointment);
-            await dbcontext.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetAppointments), new { id = appointment.Id }, appointment);
+            _context.Appointments.Add(appointment);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetAppointment), new { id = appointment.Id }, appointment);
         }
+
+        // PUT: api/appointments/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Appointment>> UpdateAppointment(int id,Appointment appointment) {
-
+        public async Task<IActionResult> UpdateAppointment(int id, Appointment appointment)
+        {
             if (id != appointment.Id)
-            
-                return BadRequest("Id mismatched");
-            
-                dbcontext.Entry(appointment).State = EntityState.Modified;
-              await  dbcontext.SaveChangesAsync();
-                return NoContent();
-                    
-                   }
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Appointment>> DeleteAppointment(int id) {
+                return BadRequest("ID mismatch");
 
-            var appointment = await dbcontext.Appointments.FindAsync();
-            if(appointment == null)
-                return NotFound();
-            dbcontext.Appointments.Remove(appointment);
-            await dbcontext.SaveChangesAsync();
+            _context.Entry(appointment).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
             return NoContent();
-
-        
         }
 
+        // DELETE: api/appointments/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAppointment(int id)
+        {
+            var appointment = await _context.Appointments.FindAsync(id);
 
+            if (appointment == null)
+                return NotFound();
+
+            _context.Appointments.Remove(appointment);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }
