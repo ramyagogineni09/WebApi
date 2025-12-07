@@ -60,7 +60,7 @@ namespace Webapi.Controllers
 
         // DELETE: api/appointments/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAppointment(int id)
+        public async Task<IActionResult> DeleteAppointment(int id )
         {
             var appointment = await _context.Appointments.FindAsync(id);
 
