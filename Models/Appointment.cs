@@ -3,7 +3,7 @@
     public class Appointment
     {
 
-        public int Id { get; set; }
+        public int Id  { get; set; }
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public DateTime StartDate { get; set; }
@@ -13,6 +13,6 @@
         public string PatientId { get; set; }
         public bool IsDoctorApproved { get; set; }
         public string AdminId { get; set; }
-
+        
     }
 }
